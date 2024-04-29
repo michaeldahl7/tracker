@@ -1,4 +1,7 @@
 import "~/styles/globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
+
+import TopNav from "./_components/topnav";
 
 import { Inter } from "next/font/google";
 
@@ -13,26 +16,19 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-function TopNav() {
-  return (
-    <nav className="flex items-center justify-between border-b bg-gray-800 p-4 text-xl font-semibold text-white">
-      <div>Tracker</div>
-      <div>Sign In</div>
-    </nav>
-  );
-}
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>
-        <TopNav />
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`font-sans ${inter.variable}`}>
+          <TopNav />
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

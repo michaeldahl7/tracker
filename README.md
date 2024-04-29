@@ -6,8 +6,8 @@
 - [x] Update build process
 - [] Scaffold basic UI with mock data
 - [x] Actually setup database (vercel postgres)
-- [] Attach database to UI
-- [] Add Auth
+- [x] Attach database to UI
+- [x] Add Auth
 - [] Error management (sentry)
 - [] Delete button with server actions
 - [] Analytics (posthog)
