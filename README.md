@@ -8,6 +8,7 @@
 - [x] Actually setup database (vercel postgres)
 - [x] Attach database to UI
 - [x] Add Auth
+- [] "taint" server-only
 - [] Error management (sentry)
 - [] Delete button with server actions
 - [] Analytics (posthog)
