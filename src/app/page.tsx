@@ -6,15 +6,17 @@ export const dynamic = "force-dynamic";
 async function Workouts() {
   const workouts = await db.query.workouts.findMany();
 
-  console.log(workouts);
-
   return (
     <div className="flex min-h-screen flex-col items-center justify-center ">
-      {workouts.map((workout) => (
-        <div key={workout.id} className="m-4 rounded-lg bg-gray-800 p-4">
-          <h2 className="text-xl font-semibold">{workout.name}</h2>
-        </div>
-      ))}
+      {workouts.length === 0 ? (
+        <div>No workouts</div>
+      ) : (
+        workouts.map((workout) => (
+          <div key={workout.id} className="m-4 rounded-lg bg-gray-800 p-4">
+            <h2 className="text-xl font-semibold">{workout.name}</h2>
+          </div>
+        ))
+      )}
     </div>
   );
 }
